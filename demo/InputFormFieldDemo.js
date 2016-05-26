@@ -37,7 +37,7 @@ class Demo extends React.Component {
                          autoTrim={false}
                          jsxlabel="普通输入框"
                          jsxtips="请输入数字"
-                         validateOnBlur={false}
+                         jsxplaceholder="输入"
                          onKeyDown={me.handleKeyDown.bind(me)}
                          jsxrules={{validator: Validators.isNotEmpty, errMsg: "不能为空"}}>
                             <LeftAddon>

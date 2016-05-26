@@ -6,12 +6,13 @@
  * All rights reserved.
  */
 
-let React = require('react');
-let ReactDOM = require('react-dom');
-let FormField = require('uxcore-form-field');
-let Constants = require("uxcore-const");
-let classnames = require('classnames');
-let assign = require('object-assign');
+const React = require('react');
+const ReactDOM = require('react-dom');
+const FormField = require('uxcore-form-field');
+const Constants = require("uxcore-const");
+const classnames = require('classnames');
+const assign = require('object-assign');
+const util = require('./util');
 
 class FormCount extends React.Component {
     constructor(props) {
@@ -216,6 +217,8 @@ class InputFormField extends FormField {
             if (!!leftAddon) {
                 arr.push(leftAddon);
             }
+            const IEver = util.getIEVer();
+            const placeholder = (IEver >= 10) ? "" : me.props.jsxplaceholder;
             arr.push(<input
                     className={classnames({
                         "kuma-input": true,
@@ -225,7 +228,7 @@ class InputFormField extends FormField {
                     ref="root"
                     key={me.props.inputType}
                     type={me.props.inputType}
-                    placeholder={me.props.jsxplaceholder}
+                    placeholder={placeholder}
                     disabled={(me.props.jsxdisabled == "disabled" || me.props.jsxdisabled == true) ? "disabled" : ""}
                     name={me.props.key}
                     value={me.state.formatValue}
