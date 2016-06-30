@@ -246,7 +246,9 @@ class InputFormField extends FormField {
             }
         }
         else if (mode == Constants.MODE.VIEW) {
-            arr.push(<span key="text">{me.state.formatValue}</span>)
+            arr.push(<span key="text">
+                {me.props.renderView(me.state.formatValue)}
+            </span>)
         }
         return arr;
     }
@@ -259,6 +261,7 @@ InputFormField.propTypes = assign({}, FormField.propTypes, {
     onBlur: React.PropTypes.func,
     onFocus: React.PropTypes.func,
     onKeyDown: React.PropTypes.func,
+    renderView: React.PropTypes.func,
     validateOnBlur: React.PropTypes.bool,
     autoTrim: React.PropTypes.bool,
     inputType: React.PropTypes.string
@@ -267,6 +270,7 @@ InputFormField.defaultProps = assign({}, FormField.defaultProps, {
     onBlur: () => {},
     onFocus: () => {},
     onKeyDown: () => {},
+    renderView: (value) => {return value;},
     validateOnBlur: false,
     inputType: 'text'
 });

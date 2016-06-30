@@ -6,12 +6,12 @@
  * All rights reserved.
  */
 
-let classnames = require('classnames');
+const classnames = require('classnames');
 
-let InputFormField = require('../src');
-let {LeftAddon, RightAddon, Count} = InputFormField;
-let Form = require('uxcore-form/build/Form');
-let Validators = require('uxcore-validator');
+const InputFormField = require('../src');
+const {LeftAddon, RightAddon, Count} = InputFormField;
+const Form = require('uxcore-form/build/Form');
+const Validators = require('uxcore-validator');
 
 class Demo extends React.Component {
 
@@ -29,7 +29,9 @@ class Demo extends React.Component {
         let me = this;
         return (
             <div>
-                <Form>
+                <Form jsxvalues={{
+                    test1: "测试"
+                }}>
                     <InputFormField
                          required={true}
                          jsxname="test1"
@@ -49,6 +51,7 @@ class Demo extends React.Component {
                             <Count total={20}/>
                         </InputFormField>
                 </Form>
+
             </div>
         );
     }
