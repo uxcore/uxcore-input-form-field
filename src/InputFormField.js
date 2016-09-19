@@ -218,7 +218,7 @@ class InputFormField extends FormField {
                 arr.push(leftAddon);
             }
             const IEver = util.getIEVer();
-            const placeholder = (IEver >= 10) ? "" : me.props.jsxplaceholder;
+            const placeholder = (IEver >= 10 && me.props.IECompatible) ? "" : me.props.jsxplaceholder;
             arr.push(<input
                     className={classnames({
                         "kuma-input": true,
@@ -258,6 +258,7 @@ InputFormField.Count = FormCount;
 InputFormField.LeftAddon = LeftAddon;
 InputFormField.RightAddon = RightAddon;
 InputFormField.propTypes = assign({}, FormField.propTypes, {
+    IECompatible: React.PropTypes.bool,
     onBlur: React.PropTypes.func,
     onFocus: React.PropTypes.func,
     onKeyDown: React.PropTypes.func,
@@ -267,6 +268,7 @@ InputFormField.propTypes = assign({}, FormField.propTypes, {
     inputType: React.PropTypes.string
 });
 InputFormField.defaultProps = assign({}, FormField.defaultProps, {
+    IECompatible: true,
     onBlur: () => {},
     onFocus: () => {},
     onKeyDown: () => {},

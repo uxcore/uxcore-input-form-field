@@ -30,7 +30,7 @@ class Demo extends React.Component {
         return (
             <div>
                 <Form jsxvalues={{
-                    test1: "测试"
+                    // test1: "测试"
                 }}>
                     <InputFormField
                          required={true}
