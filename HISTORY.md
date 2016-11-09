@@ -1,5 +1,9 @@
 # history
 
+## 0.1.5
+
+`CHANGED` update `uxcore-form-field` to `~0.2.0`
+
 ## 0.1.4
 
 `CHANGED` add prop `IECompatible` to enable/disable IE placeholder compatible mode.

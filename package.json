@@ -1,6 +1,6 @@
 {
  "name": "uxcore-input-form-field",
- "version": "0.1.4",
+ "version": "0.1.5",
  "description": "uxcore-input-form-field component for uxcore.",
  "repository": "https://github.com/uxcore/uxcore-input-form-field.git",
  "author": "eternalsky",
@@ -47,7 +47,7 @@
   "classnames": "^2.1.2",
   "object-assign": "^4.0.0",
   "uxcore-const": "0.0.2",
-  "uxcore-form-field": "~0.1.2"
+  "uxcore-form-field": "~0.2.0"
  },
  "contributors": [],
  "license": "MIT"
