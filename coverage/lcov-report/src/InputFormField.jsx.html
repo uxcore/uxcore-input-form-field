@@ -1,0 +1,743 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/InputFormField.jsx</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">src/</a> InputFormField.jsx
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">96.09% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>123/128</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">81.82% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>63/77</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>24/24</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>105/105</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">17×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">18×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">18×</span>
+<span class="cline-any cline-yes">18×</span>
+<span class="cline-any cline-yes">18×</span>
+<span class="cline-any cline-yes">18×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">18×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">18×</span>
+<span class="cline-any cline-yes">18×</span>
+<span class="cline-any cline-yes">18×</span>
+<span class="cline-any cline-yes">18×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">18×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">17×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">18×</span>
+<span class="cline-any cline-yes">18×</span>
+<span class="cline-any cline-yes">18×</span>
+<span class="cline-any cline-yes">18×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">18×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">17×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">18×</span>
+<span class="cline-any cline-yes">18×</span>
+<span class="cline-any cline-yes">18×</span>
+<span class="cline-any cline-yes">18×</span>
+<span class="cline-any cline-yes">18×</span>
+<span class="cline-any cline-yes">18×</span>
+<span class="cline-any cline-yes">18×</span>
+<span class="cline-any cline-yes">17×</span>
+<span class="cline-any cline-yes">17×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">17×</span>
+<span class="cline-any cline-yes">17×</span>
+<span class="cline-any cline-yes">17×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">17×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">18×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">'use strict';
+&nbsp;
+var _extends = Object.assign || function (target) { for (var i = 1; i &lt; arguments.length; i++) { var source = arguments[i]; for (var key in source) { <span class="cstat-no" title="statement not covered" >if (Object.prototype.hasOwnProperty.call(source, key)) { <span class="cstat-no" title="statement not covered" >target[key] = source[key]; </span>} </span>} } return target; };
+&nbsp;
+function _defaults(obj, defaults) { var keys = Object.getOwnPropertyNames(defaults); for (var i = 0; i &lt; keys.length; i++) { var key = keys[i]; var value = Object.getOwnPropertyDescriptor(defaults, key); if (value &amp;&amp; value.configurable &amp;&amp; obj[key] === undefined) { Object.defineProperty(obj, key, value); } } return obj; }
+&nbsp;
+function _classCallCheck(instance, Constructor) { <span class="missing-if-branch" title="if path not taken" >I</span>if (!(instance instanceof Constructor)) { <span class="cstat-no" title="statement not covered" >throw new TypeError("Cannot call a class as a function"); </span>} }
+&nbsp;
+function _possibleConstructorReturn(self, call) { <span class="missing-if-branch" title="if path not taken" >I</span>if (!self) { <span class="cstat-no" title="statement not covered" >throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); </span>} return call &amp;&amp; (typeof call === "object" || <span class="branch-2 cbranch-no" title="branch not covered" >typeof call === "function")</span> ? call : <span class="branch-1 cbranch-no" title="branch not covered" >self;</span> }
+&nbsp;
+function _inherits(subClass, superClass) { <span class="missing-if-branch" title="if path not taken" >I</span>if (typeof superClass !== "function" &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >superClass !== null)</span> { <span class="cstat-no" title="statement not covered" >throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); </span>} subClass.prototype = Object.create(superClass &amp;&amp; superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); <span class="missing-if-branch" title="else path not taken" >E</span>if (superClass) Object.setPrototypeOf ? <span class="branch-0 cbranch-no" title="branch not covered" >Object.setPrototypeOf(subClass, superClass) </span>: _defaults(subClass, superClass); }
+&nbsp;
+/**
+ * InputFormField Component for uxcore
+ * @author eternalsky
+ *
+ * Copyright 2015-2016, Uxcore Team, Alinw.
+ * All rights reserved.
+ */
+&nbsp;
+var React = require('react');
+var FormField = require('uxcore-form-field');
+var Constants = require('uxcore-const');
+var classnames = require('classnames');
+var assign = require('object-assign');
+&nbsp;
+var util = require('./util');
+var FormCount = require('./addons/FormCount');
+var LeftAddon = require('./addons/LeftAddon');
+var RightAddon = require('./addons/RightAddon');
+&nbsp;
+/**
+ * extend FormField, rewrite renderField method
+ */
+&nbsp;
+var InputFormField = function (_FormField) {
+  _inherits(InputFormField, _FormField);
+&nbsp;
+  function InputFormField() {
+    _classCallCheck(this, InputFormField);
+&nbsp;
+    return _possibleConstructorReturn(this, _FormField.apply(this, arguments));
+  }
+&nbsp;
+  InputFormField.prototype.handleChange = function handleChange(e) {
+    var me = this;
+    var autoTrim = me.props.autoTrim;
+&nbsp;
+    var value = e.currentTarget.value;
+    if (autoTrim) {
+      value = util.trim(value);
+    }
+    me.handleDataChange(me.deFormatValue(value));
+  };
+&nbsp;
+  InputFormField.prototype.handleFocus = function handleFocus(e) {
+    this.setState({
+      focus: true
+    });
+    this.props.onFocus(e);
+  };
+&nbsp;
+  InputFormField.prototype.handleBlur = function handleBlur(e) {
+    var me = this;
+    me.setState({
+      focus: false
+    });
+    var pass = true;
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (me.props.validateOnBlur) {
+      pass = me.doValidate();
+    }
+    me.props.onBlur(e, pass);
+  };
+&nbsp;
+  InputFormField.prototype.handleKeyDown = function handleKeyDown(e) {
+    var me = this;
+    me.props.onKeyDown(e);
+  };
+  /* eslint-disable class-methods-use-this */
+&nbsp;
+  InputFormField.prototype.deFormatValue = function deFormatValue(value) {
+    return value;
+  };
+&nbsp;
+  InputFormField.prototype.addSpecificClass = function addSpecificClass() {
+    return 'kuma-input-uxform-field';
+  };
+&nbsp;
+  /* eslint-enable class-methods-use-this */
+&nbsp;
+  InputFormField.prototype.getCount = function getCount() {
+    var me = this;
+    var children = me.props.children;
+    var element = void 0;
+    React.Children.map(children, function (child) {
+      if (child &amp;&amp; typeof child.type === 'function' &amp;&amp; child.type.displayName === 'FormCount') {
+        element = child;
+      }
+    });
+    if (element) {
+      var total = element.props.total;
+      var Count = React.cloneElement(element, {
+        length: me.state.value ? me.state.value.length : 0,
+        key: 'count'
+      });
+&nbsp;
+      return {
+        element: Count,
+        total: total
+      };
+    }
+    return null;
+  };
+&nbsp;
+  InputFormField.prototype.renderLeftAddon = function renderLeftAddon() {
+    var me = this;
+    var children = me.props.children;
+    var element = void 0;
+    React.Children.map(children, function (child) {
+      if (child &amp;&amp; typeof child.type === 'function' &amp;&amp; child.type.displayName === 'LeftAddon') {
+        element = child;
+      }
+    });
+    if (element) {
+      return React.cloneElement(element, {
+        focus: !!me.state.focus,
+        key: 'left'
+      });
+    }
+    return null;
+  };
+&nbsp;
+  InputFormField.prototype.renderRightAddon = function renderRightAddon() {
+    var me = this;
+    var children = me.props.children;
+    var element = void 0;
+    React.Children.map(children, function (child) {
+      if (child &amp;&amp; typeof child.type === 'function' &amp;&amp; child.type.displayName === 'RightAddon') {
+        element = child;
+      }
+    });
+&nbsp;
+    if (element) {
+      return React.cloneElement(element, {
+        key: 'right'
+      });
+    }
+    return null;
+  };
+&nbsp;
+  InputFormField.prototype.renderField = function renderField() {
+    var me = this;
+    var arr = [];
+    var mode = me.props.jsxmode || me.props.mode;
+    var count = me.getCount();
+    var leftAddon = me.renderLeftAddon();
+    var rightAddon = me.renderRightAddon();
+    if (mode === Constants.MODE.EDIT) {
+      var otherOptions = {};
+      if (leftAddon) {
+        arr.push(leftAddon);
+      }
+      var IEver = util.getIEVer();
+      var placeholder = IEver &gt;= 10 &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >me.props.IECompatible </span>? <span class="branch-0 cbranch-no" title="branch not covered" >'' </span>: me.props.jsxplaceholder;
+      arr.push(React.createElement('input', _extends({
+        className: classnames({
+          'kuma-input': true,
+          'kuma-uxform-input-has-right': !!count || !!rightAddon,
+          'kuma-uxform-input-has-left': !!leftAddon
+        }),
+        key: me.props.inputType,
+        type: me.props.inputType,
+        placeholder: placeholder,
+        disabled: me.props.jsxdisabled === 'disabled' || me.props.jsxdisabled === true ? 'disabled' : '',
+        name: me.props.key,
+        value: me.state.formatValue,
+        onFocus: me.handleFocus.bind(me),
+        onBlur: me.handleBlur.bind(me),
+        onChange: me.handleChange.bind(me),
+        onKeyDown: me.handleKeyDown.bind(me)
+      }, otherOptions)));
+&nbsp;
+      if (rightAddon) {
+        arr.push(rightAddon);
+      } else if (count) {
+        arr.push(count.element);
+      }
+    } else <span class="missing-if-branch" title="else path not taken" >E</span>if (mode === Constants.MODE.VIEW) {
+      arr.push(React.createElement(
+        'span',
+        { key: 'text' },
+        me.props.renderView(me.state.formatValue)
+      ));
+    }
+    return arr;
+  };
+&nbsp;
+  return InputFormField;
+}(FormField);
+&nbsp;
+InputFormField.Count = FormCount;
+InputFormField.LeftAddon = LeftAddon;
+InputFormField.RightAddon = RightAddon;
+InputFormField.propTypes = assign({}, FormField.propTypes, {
+  IECompatible: React.PropTypes.bool,
+  onBlur: React.PropTypes.func,
+  onFocus: React.PropTypes.func,
+  onKeyDown: React.PropTypes.func,
+  renderView: React.PropTypes.func,
+  validateOnBlur: React.PropTypes.bool,
+  autoTrim: React.PropTypes.bool,
+  inputType: React.PropTypes.string
+});
+InputFormField.defaultProps = assign({}, FormField.defaultProps, {
+  IECompatible: true,
+  onBlur: function onBlur() {},
+  onFocus: function onFocus() {},
+  onKeyDown: function onKeyDown() {},
+  renderView: function renderView(value) {
+    return value;
+  },
+  validateOnBlur: false,
+  inputType: 'text'
+});
+InputFormField.displayName = 'InputFormField';
+module.exports = InputFormField;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Dec 30 2016 21:04:15 GMT+0800 (CST)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>
