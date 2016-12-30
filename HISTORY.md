@@ -1,5 +1,11 @@
 # history
 
+## 0.1.6
+
+* `CHANGED` new scaffold
+* `CHANGED` eslint 
+* `CHANGED` add special className for Count
+
 ## 0.1.5
 
 `CHANGED` update `uxcore-form-field` to `~0.2.0`
