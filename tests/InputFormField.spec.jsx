@@ -7,9 +7,6 @@ import util from '../src/util';
 
 const { LeftAddon, RightAddon, Count } = InputFormField;
 
-
-// https://github.com/airbnb/enzyme/blob/3d7b68b063a75422356114b0f716c6a1747c3e59/test/ReactWrapper-spec.jsx
-
 describe('util', () => {
   it('getIEVer', () => {
     expect(util.getIEVer()).to.be(0);
@@ -51,15 +48,15 @@ describe('InputFormField', () => {
     instance = mount(
       <InputFormField jsxplaceholder="test" IECompatible={false} standalone />,
     );
-    expect(instance.find('.kuma-input').length).to.be(1);
+    expect(instance.find('.kuma-input').node.placeholder).to.be('test');
   });
 
-  /* it('handleChange method', () => {
+  it('handleChange method', () => {
     sinon.spy(InputFormField.prototype, 'handleChange');
     instance = mount(<InputFormField standalone />);
     instance.find('.kuma-input').simulate('change');
     expect(InputFormField.prototype.handleChange.calledOnce).to.equal(true);
-  });*/
+  });
 
   it('handleFocus method', () => {
     sinon.spy(InputFormField.prototype, 'handleFocus');
@@ -134,29 +131,4 @@ describe('InputFormField', () => {
     instance = mount(<InputFormField standalone jsxmode="view" value="test" />);
     expect(instance.find('.kuma-uxform-field-content .view-mode').text()).to.be('test');
   });
-
-
-/*  it('onFocus', () => {
-
-    const spy = sinon.spy();
-    instance = mount(<InputFormField standalone onFocus={spy} />);
-    instance.find('.kuma-input').simulate('focus');
-    expect(spy.calledOnce).to.equal(true);
-
-  });*/
-
- /* it('onBlur', () => {
-    const spy = sinon.spy();
-    instance = mount(<InputFormField validateOnBlur standalone onBlur={spy} />);
-    instance.find('.kuma-input').simulate('blur');
-    expect(spy.calledOnce).to.equal(true);
-  });*/
-
- /* it('onKeyDown', () => {
-    const spy = sinon.spy();
-    instance = mount(<InputFormField standalone onKeyDown={spy} />);
-    instance.find('.kuma-input').simulate('keyDown');
-    expect(spy.calledOnce).to.equal(true);
-
-  });*/
 });
