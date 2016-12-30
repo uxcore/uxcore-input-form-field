@@ -7,6 +7,10 @@ import util from '../src/util';
 
 const { LeftAddon, RightAddon, Count } = InputFormField;
 
+sinon.spy(InputFormField.prototype, 'handleFocus');
+sinon.spy(InputFormField.prototype, 'handleBlur');
+sinon.spy(InputFormField.prototype, 'handleKeyDown');
+
 describe('util', () => {
   it('getIEVer', () => {
     expect(util.getIEVer()).to.be(0);
@@ -51,30 +55,19 @@ describe('InputFormField', () => {
     expect(instance.find('.kuma-input').node.placeholder).to.be('test');
   });
 
-  it('handleChange method', () => {
-    sinon.spy(InputFormField.prototype, 'handleChange');
-    instance = mount(<InputFormField standalone />);
-    instance.find('.kuma-input').simulate('change');
-    expect(InputFormField.prototype.handleChange.calledOnce).to.equal(true);
-  });
-
   it('handleFocus method', () => {
-    sinon.spy(InputFormField.prototype, 'handleFocus');
     instance = mount(<InputFormField standalone />);
     instance.find('.kuma-input').simulate('focus');
     expect(InputFormField.prototype.handleFocus.calledOnce).to.equal(true);
   });
 
-
   it('handleBlur method', () => {
-    sinon.spy(InputFormField.prototype, 'handleBlur');
     instance = mount(<InputFormField validateOnBlur standalone />);
     instance.find('.kuma-input').simulate('blur');
     expect(InputFormField.prototype.handleBlur.calledOnce).to.equal(true);
   });
 
   it('handleKeyDown method', () => {
-    sinon.spy(InputFormField.prototype, 'handleKeyDown');
     instance = mount(<InputFormField standalone />);
     instance.find('.kuma-input').simulate('keyDown');
     expect(InputFormField.prototype.handleKeyDown.calledOnce).to.equal(true);
