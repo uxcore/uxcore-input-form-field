@@ -14,7 +14,7 @@ const LeftAddon = props => (
 
 LeftAddon.defaultProps = {};
 LeftAddon.propTypes = {
-  focus: React.PropTypes.boolean,
+  focus: React.PropTypes.bool,
   children: React.PropTypes.any,
 };
 LeftAddon.displayName = 'LeftAddon';
