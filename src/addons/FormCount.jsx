@@ -1,11 +1,15 @@
 const classnames = require('classnames');
 const React = require('react');
 
-const FormCount = props => <div className={props.prefixCls}>
+const FormCount = props => <div
+  className={classnames(props.prefixCls, {
+    [`${props.prefixCls}-overflow`]: parseInt(props.length, 10) > parseInt(props.total, 10),
+  })}
+>
   <span
     className={classnames({
       [`${props.prefixCls}-actual`]: true,
-      [`${props.prefixCls}-overflow`]: parseInt(props.length, 10) > parseInt(props.total, 10),
+      [`${props.prefixCls}-actual-overflow`]: parseInt(props.length, 10) > parseInt(props.total, 10),
     })}
   >{props.length}</span>
   <span className={`${props.prefixCls}-slash`}>/</span>
