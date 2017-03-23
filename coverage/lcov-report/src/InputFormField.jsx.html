@@ -20,9 +20,9 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">96.09% </span>
+        <span class="strong">93.48% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>123/128</span>
+        <span class='fraction'>129/138</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">80.52% </span>
@@ -30,14 +30,14 @@
         <span class='fraction'>62/77</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">87.5% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>24/24</span>
+        <span class='fraction'>28/32</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">96.52% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>105/105</span>
+        <span class='fraction'>111/115</span>
       </div>
     </div>
   </div>
@@ -269,7 +269,33 @@
 224
 225
 226
-227</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">15×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -344,6 +370,18 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -446,8 +484,22 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -569,6 +621,18 @@ var InputFormField = function (_FormField) {
     me.props.onBlur(e, pass);
   };
 &nbsp;
+  InputFormField.prototype.handleMouseEnter = <span class="fstat-no" title="function not covered" >function handleMouseEnter() {</span>
+<span class="cstat-no" title="statement not covered" >    this.setState({</span>
+      hover: true
+    });
+  };
+&nbsp;
+  InputFormField.prototype.handleMouseLeave = <span class="fstat-no" title="function not covered" >function handleMouseLeave() {</span>
+<span class="cstat-no" title="statement not covered" >    this.setState({</span>
+      hover: false
+    });
+  };
+&nbsp;
   InputFormField.prototype.handleKeyDown = function handleKeyDown(e) {
     var me = this;
     me.props.onKeyDown(e);
@@ -671,10 +735,24 @@ var InputFormField = function (_FormField) {
         disabled: me.props.jsxdisabled === 'disabled' || me.props.jsxdisabled === true ? 'disabled' : '',
         name: me.props.key,
         value: me.state.formatValue,
-        onFocus: me.handleFocus.bind(me),
-        onBlur: me.handleBlur.bind(me),
-        onChange: me.handleChange.bind(me),
-        onKeyDown: me.handleKeyDown.bind(me)
+        onMouseEnter: <span class="fstat-no" title="function not covered" >function onMouseEnter(e) {</span>
+<span class="cstat-no" title="statement not covered" >          me.handleMouseEnter(e);</span>
+        },
+        onMouseLeave: <span class="fstat-no" title="function not covered" >function onMouseLeave(e) {</span>
+<span class="cstat-no" title="statement not covered" >          me.handleMouseLeave(e);</span>
+        },
+        onFocus: function onFocus(e) {
+          me.handleFocus(e);
+        },
+        onBlur: function onBlur(e) {
+          me.handleBlur(e);
+        },
+        onChange: function onChange(e) {
+          me.handleChange(e);
+        },
+        onKeyDown: function onKeyDown(e) {
+          me.handleKeyDown(e);
+        }
       }, otherOptions)));
 &nbsp;
       if (rightAddon) {
@@ -727,7 +805,7 @@ module.exports = InputFormField;
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Dec 30 2016 21:30:28 GMT+0800 (CST)
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Mar 23 2017 14:02:23 GMT+0800 (CST)
 </div>
 </div>
 <script src="../prettify.js"></script>

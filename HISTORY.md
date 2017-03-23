@@ -1,5 +1,9 @@
 # history
 
+## 0.1.8
+
+* `CHANGED` left addon will detect input hover
+
 ## 0.1.6
 
 * `CHANGED` new scaffold

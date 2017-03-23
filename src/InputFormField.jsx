@@ -52,6 +52,18 @@ class InputFormField extends FormField {
     me.props.onBlur(e, pass);
   }
 
+  handleMouseEnter() {
+    this.setState({
+      hover: true,
+    });
+  }
+
+  handleMouseLeave() {
+    this.setState({
+      hover: false,
+    });
+  }
+
   handleKeyDown(e) {
     const me = this;
     me.props.onKeyDown(e);
@@ -103,7 +115,8 @@ class InputFormField extends FormField {
     });
     if (element) {
       return React.cloneElement(element, {
-        focus: !!me.state.focus,
+        focus: me.state.focus,
+        hover: me.state.hover,
         key: 'left',
       });
     }
@@ -154,10 +167,12 @@ class InputFormField extends FormField {
         disabled={(me.props.jsxdisabled === 'disabled' || me.props.jsxdisabled === true) ? 'disabled' : ''}
         name={me.props.key}
         value={me.state.formatValue}
-        onFocus={me.handleFocus.bind(me)}
-        onBlur={me.handleBlur.bind(me)}
-        onChange={me.handleChange.bind(me)}
-        onKeyDown={me.handleKeyDown.bind(me)}
+        onMouseEnter={(e) => { me.handleMouseEnter(e); }}
+        onMouseLeave={(e) => { me.handleMouseLeave(e); }}
+        onFocus={(e) => { me.handleFocus(e); }}
+        onBlur={(e) => { me.handleBlur(e); }}
+        onChange={(e) => { me.handleChange(e); }}
+        onKeyDown={(e) => { me.handleKeyDown(e); }}
         {...otherOptions}
       />);
 
