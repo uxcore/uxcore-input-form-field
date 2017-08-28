@@ -6,11 +6,11 @@
  * All rights reserved.
  */
 
-const Form = require('uxcore-form/build/Form');
-const Validators = require('uxcore-validator');
-const React = require('react');
+import Form from 'uxcore-form/build/Form';
 
-const InputFormField = require('../src');
+import Validators from 'uxcore-validator';
+import React from 'react';
+import InputFormField from '../src';
 
 const { LeftAddon, RightAddon, Count } = InputFormField;
 
@@ -19,7 +19,6 @@ const handleKeyDown = (e) => {
 };
 
 class Demo extends React.Component {
-
   constructor(props) {
     super(props);
     this.state = {
@@ -60,4 +59,4 @@ class Demo extends React.Component {
   }
 }
 
-module.exports = Demo;
+export default Demo;
