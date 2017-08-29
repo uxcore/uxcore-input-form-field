@@ -6,4 +6,4 @@
  * All rights reserved.
  */
 
-module.exports = require('./InputFormField');
+export default from './InputFormField';

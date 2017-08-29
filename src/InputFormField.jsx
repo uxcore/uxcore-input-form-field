@@ -6,29 +6,43 @@
  * All rights reserved.
  */
 
-const React = require('react');
-const FormField = require('uxcore-form-field');
-const Constants = require('uxcore-const');
-const classnames = require('classnames');
-const assign = require('object-assign');
+import React from 'react';
 
-const util = require('./util');
-const FormCount = require('./addons/FormCount');
-const LeftAddon = require('./addons/LeftAddon');
-const RightAddon = require('./addons/RightAddon');
+import FormField from 'uxcore-form-field';
+import Constants from 'uxcore-const';
+import classnames from 'classnames';
+import assign from 'object-assign';
+import util from './util';
+import FormCount from './addons/FormCount';
+import LeftAddon from './addons/LeftAddon';
+import RightAddon from './addons/RightAddon';
 
 
 /**
  * extend FormField, rewrite renderField method
  */
 class InputFormField extends FormField {
+  componentWillUnmount() {
+    this.clearTimer();
+  }
+
+  clearTimer() {
+    if (this.timer) {
+      clearTimeout(this.timer);
+      this.timer = null;
+    }
+  }
 
   handleChange(e) {
     const me = this;
     const { autoTrim } = me.props;
     let value = e.currentTarget.value;
     if (autoTrim) {
-      value = util.trim(value);
+      me.clearTimer();
+      me.timer = setTimeout(() => {
+        value = util.trim(value);
+        me.handleDataChange(me.deFormatValue(value));
+      }, 500);
     }
     me.handleDataChange(me.deFormatValue(value));
   }
@@ -213,4 +227,4 @@ InputFormField.defaultProps = assign({}, FormField.defaultProps, {
   inputType: 'text',
 });
 InputFormField.displayName = 'InputFormField';
-module.exports = InputFormField;
+export default InputFormField;

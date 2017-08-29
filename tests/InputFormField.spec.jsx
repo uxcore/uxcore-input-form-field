@@ -10,6 +10,7 @@ const { LeftAddon, RightAddon, Count } = InputFormField;
 sinon.spy(InputFormField.prototype, 'handleFocus');
 sinon.spy(InputFormField.prototype, 'handleBlur');
 sinon.spy(InputFormField.prototype, 'handleKeyDown');
+const clearTimerSpy = sinon.spy(InputFormField.prototype, 'clearTimer');
 
 describe('util', () => {
   it('getIEVer', () => {
@@ -24,15 +25,31 @@ describe('util', () => {
 describe('InputFormField', () => {
   let instance;
 
-  it('autoTrim', () => {
+  it('autoTrim', (done) => {
     instance = mount(
       <InputFormField autoTrim standalone />,
     );
-    instance.find('.kuma-input').node.value = 'test ';
+    instance.find('.kuma-input').node.value = ' a b ';
     instance.find('.kuma-input').simulate('change');
-    expect(instance.find('.kuma-input').node.value).to.be('test');
+    setTimeout(() => {
+      expect(instance.find('.kuma-input').node.value).to.be(' a b ');
+    }, 400);
+    setTimeout(() => {
+      expect(instance.find('.kuma-input').node.value).to.be('a b');
+      done();
+    }, 600);
   });
 
+  it('clear autoTrim timer on unmount', () => {
+    instance = mount(
+      <InputFormField autoTrim standalone />,
+    );
+    instance.find('.kuma-input').node.value = 'a';
+    instance.find('.kuma-input').simulate('change');
+    clearTimerSpy.reset();
+    instance.unmount();
+    expect(clearTimerSpy.calledOnce).to.be(true);
+  });
 
   it('jsxdisabled', () => {
     instance = mount(

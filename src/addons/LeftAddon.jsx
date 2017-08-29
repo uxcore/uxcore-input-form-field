@@ -1,5 +1,5 @@
-const classnames = require('classnames');
-const React = require('react');
+import classnames from 'classnames';
+import React from 'react';
 
 const LeftAddon = props => (
   <div
@@ -14,11 +14,15 @@ const LeftAddon = props => (
 );
 
 LeftAddon.defaultProps = {};
+
+/* eslint-disable react/require-default-props */
 LeftAddon.propTypes = {
   focus: React.PropTypes.bool,
   hover: React.PropTypes.bool,
   children: React.PropTypes.any,
 };
+/* eslint-enable react/require-default-props */
+
 LeftAddon.displayName = 'LeftAddon';
 
-module.exports = LeftAddon;
+export default LeftAddon;
