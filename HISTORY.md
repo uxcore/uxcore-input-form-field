@@ -1,5 +1,10 @@
 # history
 
+## 0.1.10
+
+* `CHANGED` debounce autoTrim to allow spaces in the middle of input.
+* `CHANGED` lint
+
 ## 0.1.8
 
 * `CHANGED` left addon will detect input hover
