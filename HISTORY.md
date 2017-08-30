@@ -1,5 +1,9 @@
 # history
 
+## 0.1.11
+
+* `FIXED` base `componentWillUnmout` is overwriten.
+
 ## 0.1.10
 
 * `CHANGED` debounce autoTrim to allow spaces in the middle of input.

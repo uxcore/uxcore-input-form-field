@@ -20,24 +20,24 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">92.86% </span>
+        <span class="strong">95% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>13/14</span>
+        <span class='fraction'>19/20</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">50% </span>
+        <span class="strong">66.67% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>1/2</span>
+        <span class='fraction'>4/6</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>2/2</span>
+        <span class='fraction'>3/3</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>10/10</span>
+        <span class='fraction'>15/15</span>
       </div>
     </div>
   </div>
@@ -88,12 +88,40 @@
 43
 44
 45
-46</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">6×</span>
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">3×</span>
@@ -121,7 +149,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
@@ -129,36 +156,56 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">'use strict';
 &nbsp;
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+&nbsp;
+var _classnames3 = require('classnames');
+&nbsp;
+var _classnames4 = _interopRequireDefault(_classnames3);
+&nbsp;
+var _react = require('react');
+&nbsp;
+var _react2 = _interopRequireDefault(_react);
+&nbsp;
+function _interopRequireDefault(obj) { return obj &amp;&amp; obj.__esModule ? <span class="branch-0 cbranch-no" title="branch not covered" >obj </span>: { 'default': obj }; }
+&nbsp;
 function _defineProperty(obj, key, value) { <span class="missing-if-branch" title="if path not taken" >I</span>if (key in obj) { <span class="cstat-no" title="statement not covered" >Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); </span>} else { obj[key] = value; } return obj; }
 &nbsp;
-var classnames = require('classnames');
-var React = require('react');
-&nbsp;
 var FormCount = function FormCount(props) {
-  var _classnames;
+  var _classnames2;
 &nbsp;
-  return React.createElement(
+  return _react2['default'].createElement(
     'div',
-    { className: props.prefixCls },
-    React.createElement(
+    {
+      className: (0, _classnames4['default'])(props.prefixCls, _defineProperty({}, props.prefixCls + '-overflow', parseInt(props.length, 10) &gt; parseInt(props.total, 10)))
+    },
+    _react2['default'].createElement(
       'span',
       {
-        className: classnames((_classnames = {}, _defineProperty(_classnames, props.prefixCls + '-actual', true), _defineProperty(_classnames, props.prefixCls + '-overflow', parseInt(props.length, 10) &gt; parseInt(props.total, 10)), _classnames))
+        className: (0, _classnames4['default'])((_classnames2 = {}, _defineProperty(_classnames2, props.prefixCls + '-actual', true), _defineProperty(_classnames2, props.prefixCls + '-actual-overflow', parseInt(props.length, 10) &gt; parseInt(props.total, 10)), _classnames2))
       },
       props.length
     ),
-    React.createElement(
+    _react2['default'].createElement(
       'span',
       { className: props.prefixCls + '-slash' },
       '/'
     ),
-    React.createElement(
+    _react2['default'].createElement(
       'span',
       { className: props.prefixCls + '-max' },
       props.total
@@ -169,22 +216,26 @@ var FormCount = function FormCount(props) {
 FormCount.defaultProps = {
   prefixCls: 'kuma-uxform-count'
 };
+&nbsp;
+/* eslint-disable react/require-default-props */
 FormCount.propTypes = {
-  prefixCls: React.PropTypes.string,
-  length: React.PropTypes.number,
-  total: React.PropTypes.number
+  prefixCls: _react2['default'].PropTypes.string,
+  length: _react2['default'].PropTypes.number,
+  total: _react2['default'].PropTypes.number
 };
+/* eslint-enable react/require-default-props */
 &nbsp;
 FormCount.displayName = 'FormCount';
 &nbsp;
-module.exports = FormCount;
+exports['default'] = FormCount;
+module.exports = exports['default'];
 &nbsp;</pre></td></tr>
 </table></pre>
 <div class='push'></div><!-- for sticky footer -->
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Mar 23 2017 14:02:23 GMT+0800 (CST)
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Aug 30 2017 14:50:44 GMT+0800 (CST)
 </div>
 </div>
 <script src="../../prettify.js"></script>

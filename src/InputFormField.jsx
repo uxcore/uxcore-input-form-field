@@ -23,6 +23,7 @@ import RightAddon from './addons/RightAddon';
  */
 class InputFormField extends FormField {
   componentWillUnmount() {
+    super.componentWillUnmount();
     this.clearTimer();
   }
 
