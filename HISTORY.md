@@ -1,5 +1,9 @@
 # history
 
+## 0.1.12
+
+* `CHANGED` use `jsxname` for input name attr
+
 ## 0.1.11
 
 * `FIXED` base `componentWillUnmout` is overwriten.

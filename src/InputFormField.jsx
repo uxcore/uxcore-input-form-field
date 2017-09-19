@@ -180,7 +180,7 @@ class InputFormField extends FormField {
         type={me.props.inputType}
         placeholder={placeholder}
         disabled={(me.props.jsxdisabled === 'disabled' || me.props.jsxdisabled === true) ? 'disabled' : ''}
-        name={me.props.key}
+        name={me.props.jsxname}
         value={me.state.formatValue}
         onMouseEnter={(e) => { me.handleMouseEnter(e); }}
         onMouseLeave={(e) => { me.handleMouseLeave(e); }}
