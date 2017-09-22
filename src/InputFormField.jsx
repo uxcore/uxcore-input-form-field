@@ -188,6 +188,7 @@ class InputFormField extends FormField {
         onBlur={(e) => { me.handleBlur(e); }}
         onChange={(e) => { me.handleChange(e); }}
         onKeyDown={(e) => { me.handleKeyDown(e); }}
+        size={this.getSize()}
         {...otherOptions}
       />);
 

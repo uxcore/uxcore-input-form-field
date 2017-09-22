@@ -1,5 +1,9 @@
 # history
 
+## 0.1.13
+
+* `CHANGED` support size config
+
 ## 0.1.12
 
 * `CHANGED` use `jsxname` for input name attr
