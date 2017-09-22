@@ -170,11 +170,13 @@ class InputFormField extends FormField {
       }
       const IEver = util.getIEVer();
       const placeholder = (IEver >= 10 && me.props.IECompatible) ? '' : me.props.jsxplaceholder;
+      const size = this.getSize();
       arr.push(<input
         className={classnames({
           'kuma-input': true,
           'kuma-uxform-input-has-right': !!count || !!rightAddon,
           'kuma-uxform-input-has-left': !!leftAddon,
+          [`kuma-input-${size}-size`]: !!size,
         })}
         key={me.props.inputType}
         type={me.props.inputType}
@@ -188,7 +190,6 @@ class InputFormField extends FormField {
         onBlur={(e) => { me.handleBlur(e); }}
         onChange={(e) => { me.handleChange(e); }}
         onKeyDown={(e) => { me.handleKeyDown(e); }}
-        size={this.getSize()}
         {...otherOptions}
       />);
 
