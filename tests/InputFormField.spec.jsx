@@ -1,9 +1,12 @@
 import expect from 'expect.js';
 import React from 'react';
-import { mount } from 'enzyme';
+import Enzyme, { mount } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-15';
 import sinon from 'sinon';
 import InputFormField from '../src';
 import util from '../src/util';
+
+Enzyme.configure({ adapter: new Adapter() });
 
 const { LeftAddon, RightAddon, Count } = InputFormField;
 
@@ -29,13 +32,13 @@ describe('InputFormField', () => {
     instance = mount(
       <InputFormField autoTrim standalone />,
     );
-    instance.find('.kuma-input').node.value = ' a b ';
+    instance.find('.kuma-input').instance().value = ' a b ';
     instance.find('.kuma-input').simulate('change');
     setTimeout(() => {
-      expect(instance.find('.kuma-input').node.value).to.be(' a b ');
+      expect(instance.find('.kuma-input').instance().value).to.be(' a b ');
     }, 400);
     setTimeout(() => {
-      expect(instance.find('.kuma-input').node.value).to.be('a b');
+      expect(instance.find('.kuma-input').instance().value).to.be('a b');
       done();
     }, 600);
   });
@@ -44,7 +47,7 @@ describe('InputFormField', () => {
     instance = mount(
       <InputFormField autoTrim standalone />,
     );
-    instance.find('.kuma-input').node.value = 'a';
+    instance.find('.kuma-input').instance().value = 'a';
     instance.find('.kuma-input').simulate('change');
     clearTimerSpy.reset();
     instance.unmount();
@@ -55,21 +58,21 @@ describe('InputFormField', () => {
     instance = mount(
       <InputFormField jsxdisabled standalone />,
     );
-    expect(instance.find('.kuma-input').node.disabled).to.be(true);
+    expect(instance.find('.kuma-input').instance().disabled).to.be(true);
   });
 
   it('inputType', () => {
     instance = mount(
       <InputFormField inputType="password" standalone />,
     );
-    expect(instance.find('.kuma-input').node.type).to.be('password');
+    expect(instance.find('.kuma-input').instance().type).to.be('password');
   });
 
   it('IECompatible', () => {
     instance = mount(
       <InputFormField jsxplaceholder="test" IECompatible={false} standalone />,
     );
-    expect(instance.find('.kuma-input').node.placeholder).to.be('test');
+    expect(instance.find('.kuma-input').instance().placeholder).to.be('test');
   });
 
   it('handleFocus method', () => {

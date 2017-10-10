@@ -7,7 +7,7 @@
  */
 
 import React from 'react';
-
+import PropTypes from 'prop-types';
 import FormField from 'uxcore-form-field';
 import Constants from 'uxcore-const';
 import classnames from 'classnames';
@@ -211,14 +211,14 @@ InputFormField.Count = FormCount;
 InputFormField.LeftAddon = LeftAddon;
 InputFormField.RightAddon = RightAddon;
 InputFormField.propTypes = assign({}, FormField.propTypes, {
-  IECompatible: React.PropTypes.bool,
-  onBlur: React.PropTypes.func,
-  onFocus: React.PropTypes.func,
-  onKeyDown: React.PropTypes.func,
-  renderView: React.PropTypes.func,
-  validateOnBlur: React.PropTypes.bool,
-  autoTrim: React.PropTypes.bool,
-  inputType: React.PropTypes.string,
+  IECompatible: PropTypes.bool,
+  onBlur: PropTypes.func,
+  onFocus: PropTypes.func,
+  onKeyDown: PropTypes.func,
+  renderView: PropTypes.func,
+  validateOnBlur: PropTypes.bool,
+  autoTrim: PropTypes.bool,
+  inputType: PropTypes.string,
 });
 InputFormField.defaultProps = assign({}, FormField.defaultProps, {
   IECompatible: true,
