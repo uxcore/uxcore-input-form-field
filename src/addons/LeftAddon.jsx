@@ -1,5 +1,6 @@
 import classnames from 'classnames';
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const LeftAddon = props => (
   <div
@@ -17,9 +18,9 @@ LeftAddon.defaultProps = {};
 
 /* eslint-disable react/require-default-props */
 LeftAddon.propTypes = {
-  focus: React.PropTypes.bool,
-  hover: React.PropTypes.bool,
-  children: React.PropTypes.any,
+  focus: PropTypes.bool,
+  hover: PropTypes.bool,
+  children: PropTypes.any,
 };
 /* eslint-enable react/require-default-props */
 

@@ -1,5 +1,6 @@
 import classnames from 'classnames';
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const FormCount = props => (
   <div
@@ -24,9 +25,9 @@ FormCount.defaultProps = {
 
 /* eslint-disable react/require-default-props */
 FormCount.propTypes = {
-  prefixCls: React.PropTypes.string,
-  length: React.PropTypes.number,
-  total: React.PropTypes.number,
+  prefixCls: PropTypes.string,
+  length: PropTypes.number,
+  total: PropTypes.number,
 };
 /* eslint-enable react/require-default-props */
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const RightAddon = props => (
   <div className="kuma-uxform-right-icon ">
@@ -10,7 +11,7 @@ RightAddon.defaultProps = {};
 
 /* eslint-disable react/require-default-props */
 RightAddon.propTypes = {
-  children: React.PropTypes.any,
+  children: PropTypes.any,
 };
 /* eslint-enable react/require-default-props */
 

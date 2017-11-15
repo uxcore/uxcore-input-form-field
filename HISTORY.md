@@ -1,5 +1,9 @@
 # history
 
+## 0.1.15
+
+* `CHANGED` fit React@15 for addons
+
 ## 0.1.14
 
 * `CHANGED` fit React@15
