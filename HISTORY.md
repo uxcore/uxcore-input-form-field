@@ -1,5 +1,9 @@
 # history
 
+## 0.2.0
+
+* `CHANGED` add a new wrapper for width control
+
 ## 0.1.15
 
 * `CHANGED` fit React@15 for addons

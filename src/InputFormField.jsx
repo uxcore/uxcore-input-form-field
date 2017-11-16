@@ -199,11 +199,17 @@ class InputFormField extends FormField {
         arr.push(count.element);
       }
     } else if (mode === Constants.MODE.VIEW) {
-      arr.push(<span key="text">
-        {me.props.renderView(me.state.formatValue)}
-      </span>);
+      arr.push(
+        <span key="text">
+          {me.props.renderView(me.state.formatValue)}
+        </span>
+      );
     }
-    return arr;
+    return (
+      <div className="kuma-uxform-input">
+        {arr}
+      </div>
+    );
   }
 }
 
