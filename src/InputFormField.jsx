@@ -183,7 +183,7 @@ class InputFormField extends FormField {
         placeholder={placeholder}
         disabled={(me.props.jsxdisabled === 'disabled' || me.props.jsxdisabled === true) ? 'disabled' : ''}
         name={me.props.jsxname}
-        value={me.state.formatValue}
+        value={util.isNil(me.state.formatValue) ? '' : me.state.formatValue}
         onMouseEnter={(e) => { me.handleMouseEnter(e); }}
         onMouseLeave={(e) => { me.handleMouseLeave(e); }}
         onFocus={(e) => { me.handleFocus(e); }}

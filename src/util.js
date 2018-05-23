@@ -19,7 +19,10 @@ const getIEVer = () => {
 
 const trim = str => str.replace(/(^\s+|\s+$)/g, '');
 
+const isNil = variable => variable === null || variable === undefined;
+
 export default {
   getIEVer,
   trim,
+  isNil,
 };
