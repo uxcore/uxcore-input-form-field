@@ -1,5 +1,10 @@
 # history
 
+
+## 0.3.0
+
+* `CHANGED` adapt React@16
+
 ## 0.2.0
 
 * `CHANGED` add a new wrapper for width control
