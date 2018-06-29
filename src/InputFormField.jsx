@@ -83,7 +83,12 @@ class InputFormField extends FormField {
     const me = this;
     me.props.onKeyDown(e);
   }
+
   /* eslint-disable class-methods-use-this */
+
+  formatValue(value) {
+    return value;
+  }
 
   deFormatValue(value) {
     return value;
@@ -183,7 +188,7 @@ class InputFormField extends FormField {
         placeholder={placeholder}
         disabled={(me.props.jsxdisabled === 'disabled' || me.props.jsxdisabled === true) ? 'disabled' : ''}
         name={me.props.jsxname}
-        value={util.isNil(me.state.formatValue) ? '' : me.state.formatValue}
+        value={util.isNil(me.state.formatValue) ? '' : me.formatValue(me.state.formatValue)}
         onMouseEnter={(e) => { me.handleMouseEnter(e); }}
         onMouseLeave={(e) => { me.handleMouseLeave(e); }}
         onFocus={(e) => { me.handleFocus(e); }}
