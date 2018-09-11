@@ -175,6 +175,7 @@ class InputFormField extends FormField {
       }
       const IEver = util.getIEVer();
       const placeholder = (IEver >= 10 && me.props.IECompatible) ? '' : me.props.jsxplaceholder;
+      const value = util.isNil(me.state.formatValue) ? '' : me.formatValue(me.state.formatValue);
       const size = this.getSize();
       arr.push(<input
         className={classnames({
@@ -186,9 +187,10 @@ class InputFormField extends FormField {
         key={me.props.inputType}
         type={me.props.inputType}
         placeholder={placeholder}
+        title={value || placeholder}
         disabled={(me.props.jsxdisabled === 'disabled' || me.props.jsxdisabled === true) ? 'disabled' : ''}
         name={me.props.jsxname}
-        value={util.isNil(me.state.formatValue) ? '' : me.formatValue(me.state.formatValue)}
+        value={value}
         onMouseEnter={(e) => { me.handleMouseEnter(e); }}
         onMouseLeave={(e) => { me.handleMouseLeave(e); }}
         onFocus={(e) => { me.handleFocus(e); }}
