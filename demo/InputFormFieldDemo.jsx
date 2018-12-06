@@ -35,14 +35,15 @@ class Demo extends React.Component {
         >
           <InputFormField
             required
-            jsxname="test1"
-            jsxdisabled={false}
-            autoTrim={false}
+            name="test1"
+            // jsxdisabled={false}
+            // autoTrim={false}
             jsxlabel="普通输入框"
-            jsxtips="请输入数字"
-            jsxplaceholder="输入"
-            onKeyDown={handleKeyDown}
-            jsxrules={{ validator: Validators.isNotEmpty, errMsg: '不能为空' }}
+            // jsxtips="请输入数字"
+            // jsxplaceholder="输入"
+            // onKeyDown={handleKeyDown}
+            // jsxrules={{ validator: Validators.isNotEmpty, errMsg: '不能为空' }}
+            autoComplete={false}
           >
             <LeftAddon>
               <i className="kuma-icon kuma-icon-phone" />

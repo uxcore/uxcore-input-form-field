@@ -54,11 +54,12 @@ describe('InputFormField', () => {
     expect(clearTimerSpy.calledOnce).to.be(true);
   });
 
-  it('jsxdisabled', () => {
+  it('jsxdisabled or autocomplete', () => {
     instance = mount(
-      <InputFormField jsxdisabled standalone />,
+      <InputFormField jsxdisabled standalone autoComplete={false} />,
     );
     expect(instance.find('.kuma-input').instance().disabled).to.be(true);
+    expect(instance.find('.kuma-input').instance().autocomplete).to.be('off');
   });
 
   it('inputType', () => {
@@ -142,6 +143,6 @@ describe('InputFormField', () => {
 
   it('jsxmode view', () => {
     instance = mount(<InputFormField standalone jsxmode="view" value="test" />);
-    expect(instance.find('.kuma-uxform-field-content .view-mode').text()).to.be('test');
+    expect(instance.find('.kuma-uxform-field-content').text()).to.be('test');
   });
 });

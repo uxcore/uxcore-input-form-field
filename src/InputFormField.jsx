@@ -169,7 +169,6 @@ class InputFormField extends FormField {
     const leftAddon = me.renderLeftAddon();
     const rightAddon = me.renderRightAddon();
     if (mode === Constants.MODE.EDIT) {
-      const otherOptions = {};
       if (leftAddon) {
         arr.push(leftAddon);
       }
@@ -197,7 +196,7 @@ class InputFormField extends FormField {
         onBlur={(e) => { me.handleBlur(e); }}
         onChange={(e) => { me.handleChange(e); }}
         onKeyDown={(e) => { me.handleKeyDown(e); }}
-        {...otherOptions}
+        autoComplete={me.props.autoComplete ? 'on' : 'off'}
       />);
 
       if (rightAddon) {
@@ -232,6 +231,7 @@ InputFormField.propTypes = assign({}, FormField.propTypes, {
   validateOnBlur: PropTypes.bool,
   autoTrim: PropTypes.bool,
   inputType: PropTypes.string,
+  autoComplete: PropTypes.bool
 });
 InputFormField.defaultProps = assign({}, FormField.defaultProps, {
   IECompatible: true,
@@ -241,6 +241,7 @@ InputFormField.defaultProps = assign({}, FormField.defaultProps, {
   renderView: value => value,
   validateOnBlur: false,
   inputType: 'text',
+  autoComplete: true
 });
 InputFormField.displayName = 'InputFormField';
 export default InputFormField;
