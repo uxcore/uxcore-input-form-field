@@ -1,4 +1,7 @@
 # history
+## 0.3.3
+* `FIXED` fix unit too long
+
 ## 0.3.2
 
 * `CHANGED` add a new prop autoComplete
