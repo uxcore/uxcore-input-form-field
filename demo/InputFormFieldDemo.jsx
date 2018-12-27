@@ -48,7 +48,7 @@ class Demo extends React.Component {
               <i className="kuma-icon kuma-icon-phone" />
             </LeftAddon>
             <RightAddon>
-              <span>很长的单位元</span>
+              <span>很长的单位/元</span>
             </RightAddon>
             {/*<Count total={20} />*/}
           </InputFormField>
