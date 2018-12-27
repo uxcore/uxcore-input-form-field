@@ -48,10 +48,10 @@ class Demo extends React.Component {
             <LeftAddon>
               <i className="kuma-icon kuma-icon-phone" />
             </LeftAddon>
-            {/* <RightAddon>
-              <span>元</span>
-            </RightAddon> */}
-            <Count total={20} />
+            <RightAddon>
+              <span>这个单位有点长</span>
+            </RightAddon>
+            {/*<Count total={20} />*/}
           </InputFormField>
         </Form>
 
