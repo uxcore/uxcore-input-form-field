@@ -1,5 +1,5 @@
 # history
-## 0.3.3
+## 0.3.4
 * `FIXED` fix unit too long
 
 ## 0.3.2

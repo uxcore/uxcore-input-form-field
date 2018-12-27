@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const RightAddon = props => (
-  <div className="kuma-uxform-right-icon " style={{ wordBreak: 'keep-all' }}>
+  <div className="kuma-uxform-right-icon " style={{ whiteSpace: 'nowrap', wordBreak: 'keep-all' }}>
     {props.children}
   </div>
 );
