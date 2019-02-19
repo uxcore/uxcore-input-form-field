@@ -1,5 +1,6 @@
 # history
-##
+## 0.3.5
+* `NEW` add title when in view mode
 
 ## 0.3.4
 * `FIXED` fix unit too long
