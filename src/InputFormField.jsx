@@ -202,7 +202,7 @@ class InputFormField extends FormField {
       }
     } else if (mode === Constants.MODE.VIEW) {
       arr.push(
-        <span key="text">
+        <span key="text" title={me.state.formatValue}>
           {me.props.renderView(me.state.formatValue)}
         </span>
       );
