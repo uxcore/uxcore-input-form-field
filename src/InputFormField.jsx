@@ -171,6 +171,7 @@ class InputFormField extends FormField {
       const IEver = util.getIEVer();
       const placeholder = (IEver >= 10 && me.props.IECompatible) ? '' : me.props.jsxplaceholder;
       const size = this.getSize();
+      const value = util.isNil(me.state.formatValue) ? '' : me.state.formatValue;
       arr.push(<input
         className={classnames({
           'kuma-input': true,
@@ -180,10 +181,11 @@ class InputFormField extends FormField {
         })}
         key={me.props.inputType}
         type={me.props.inputType}
+        title={value || placeholder}
         placeholder={placeholder}
         disabled={(me.props.jsxdisabled === 'disabled' || me.props.jsxdisabled === true) ? 'disabled' : ''}
         name={me.props.jsxname}
-        value={util.isNil(me.state.formatValue) ? '' : me.state.formatValue}
+        value={value}
         onMouseEnter={(e) => { me.handleMouseEnter(e); }}
         onMouseLeave={(e) => { me.handleMouseLeave(e); }}
         onFocus={(e) => { me.handleFocus(e); }}
@@ -200,7 +202,7 @@ class InputFormField extends FormField {
       }
     } else if (mode === Constants.MODE.VIEW) {
       arr.push(
-        <span key="text">
+        <span key="text" title={me.state.formatValue}>
           {me.props.renderView(me.state.formatValue)}
         </span>
       );
