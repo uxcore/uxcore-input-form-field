@@ -1,5 +1,5 @@
 # history
-## 0.2.4
+## 0.2.6
 
 `FIXED` fix unit too long
 
@@ -39,7 +39,7 @@
 ## 0.1.6
 
 * `CHANGED` new scaffold
-* `CHANGED` eslint 
+* `CHANGED` eslint
 * `CHANGED` add special className for Count
 
 ## 0.1.5
