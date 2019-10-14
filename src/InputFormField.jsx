@@ -238,7 +238,7 @@ InputFormField.defaultProps = assign({}, FormField.defaultProps, {
   onBlur: () => { },
   onFocus: () => { },
   onKeyDown: () => { },
-  renderView: value => value,
+  renderView: value => value || '--',
   validateOnBlur: false,
   inputType: 'text',
   autoComplete: true
