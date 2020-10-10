@@ -186,7 +186,7 @@ class InputFormField extends FormField {
         key={me.props.inputType}
         type={me.props.inputType}
         placeholder={placeholder}
-        title={value || placeholder}
+        title={me.props.inputType === 'password' ? '' : (value || placeholder) }
         disabled={(me.props.jsxdisabled === 'disabled' || me.props.jsxdisabled === true) ? 'disabled' : ''}
         name={me.props.jsxname}
         value={value}
